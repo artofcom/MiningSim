@@ -1,0 +1,13 @@
+{ "tasks":[
+  {
+    "goalID": 100,
+    "description": "Walk with your dog 300 Steps during day",
+    "action": "STEPS",
+    "type": "QUANTITY",
+    "goalvalue": 300,
+    "difficulty": "EASY",
+    "icon": "WALK",
+    "rewardtype": 0,
+    "rewardvalue": 100
+  }
+  ]}

@@ -41,15 +41,32 @@ namespace GameData
             public float rate;
         }
         [Serializable]
-        public class Performance
+        public class LevelFloat
         {
-            public float rate;
-            public CurrencyAmount cost;
+            public float GetValue(int level)
+            {
+                return baseValue + increaseValue * ((float)level);
+            }
+            public float baseValue;
+            public float increaseValue;
+        }
+
+        [Serializable]
+        public class LevelBigInt
+        {
+            public BigInteger GetValue(int level)
+            {
+                return new BigInteger(baseValue) + new BigInteger(increaseValue) * level;
+            }
+            public int baseValue;
+            public int increaseValue;
         }
 
         public int id;
         public List<Obtainables> obtainables;
-        public List<Performance> levelPerformances; // performance per level. ( idx+1 == level )
+        public LevelFloat performances; 
+        public LevelBigInt upgradeCost;
+        public Currency currencyType;
     }
 
     [Serializable]
